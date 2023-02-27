@@ -9,6 +9,9 @@ import android.widget.TextView
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    var leftVal: Double = 0.0
+    var rightVal: Double = 0.0
+    var operator: Char = ' '
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,19 +37,12 @@ class MainActivity : AppCompatActivity() {
             R.id.button7 -> mainWindow.text = mainWindow.text.toString() + "7"
             R.id.button8 -> mainWindow.text = mainWindow.text.toString() + "8"
             R.id.button9 -> mainWindow.text = mainWindow.text.toString() + "9"
-            R.id.buttonPlus -> mainWindow.text = mainWindow.text.toString() + "+"
-            R.id.buttonMinus -> mainWindow.text = mainWindow.text.toString() + "-"
-            R.id.buttonMult -> mainWindow.text = mainWindow.text.toString() + "*"
-            R.id.buttonDiv -> mainWindow.text = mainWindow.text.toString() + "/"
             R.id.buttonDot -> {
                 // точка может быть только одна в числе
                 if (!mainWindow.text.contains('.') && !mainWindow.text.isEmpty()) {
                     mainWindow.text = mainWindow.text.toString() + "."
                 }
             }
-            R.id.buttonProc -> mainWindow.text = mainWindow.text.toString() + "%"
-            R.id.buttonRoot -> mainWindow.text = "sqrt(" + mainWindow.text.toString() + ")"
-            R.id.buttonSquare -> mainWindow.text = mainWindow.text.toString() + "^2"
             R.id.buttonChange -> {
                 // смена знака
                 if (!mainWindow.text.isEmpty() && mainWindow.text.get(0) == '-') {
@@ -57,6 +53,23 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             R.id.buttonClear -> mainWindow.text = ""
+        }
+    }
+
+    fun operatorEvent(view: View) {
+        var mainWindow: TextView = findViewById(R.id.mainWindow)
+        var select_button = view as Button
+        when (select_button.id) {
+            R.id.buttonPlus -> mainWindow.text = mainWindow.text.toString() + "+"
+            R.id.buttonMinus -> mainWindow.text = mainWindow.text.toString() + "-"
+            R.id.buttonMult -> mainWindow.text = mainWindow.text.toString() + "*"
+            R.id.buttonDiv -> mainWindow.text = mainWindow.text.toString() + "/"
+            R.id.buttonProc -> mainWindow.text = mainWindow.text.toString() + "%"
+            R.id.buttonRoot -> mainWindow.text = "sqrt(" + mainWindow.text.toString() + ")"
+            R.id.buttonSquare -> mainWindow.text = mainWindow.text.toString() + "^2"
+            R.id.buttonCalc -> {
+
+            }
         }
     }
 }
