@@ -47,6 +47,15 @@ class MainActivity : AppCompatActivity() {
             R.id.buttonProc -> mainWindow.text = mainWindow.text.toString() + "%"
             R.id.buttonRoot -> mainWindow.text = "sqrt(" + mainWindow.text.toString() + ")"
             R.id.buttonSquare -> mainWindow.text = mainWindow.text.toString() + "^2"
+            R.id.buttonChange -> {
+                // смена знака
+                if (!mainWindow.text.isEmpty() && mainWindow.text.get(0) == '-') {
+                    mainWindow.text = mainWindow.text.drop(1)
+                }
+                else {
+                    mainWindow.text = "-" + mainWindow.text
+                }
+            }
             R.id.buttonClear -> mainWindow.text = ""
         }
     }
