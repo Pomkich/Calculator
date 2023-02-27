@@ -12,12 +12,16 @@ class MainActivity : AppCompatActivity() {
     var leftVal: Double = 0.0
     var rightVal: Double = 0.0
     var operator: Char = ' '
+    var leftValInited: Boolean = false
+    var rightValInited: Boolean = false
+    var operatorLocked: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
     }
 
+    // обработка кнопок ввода чисел
     fun buttonEvent(view: View) {
         var mainWindow: TextView = findViewById(R.id.mainWindow)
         var select_button = view as Button
@@ -56,20 +60,80 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // запоминание оператора и операндов
     fun operatorEvent(view: View) {
         var mainWindow: TextView = findViewById(R.id.mainWindow)
+        if (mainWindow.text.toString().isEmpty()) return    // если нет числа, то оператор нельзя определить
+
+        var textOp: TextView = findViewById(R.id.operator)
         var select_button = view as Button
         when (select_button.id) {
-            R.id.buttonPlus -> mainWindow.text = mainWindow.text.toString() + "+"
-            R.id.buttonMinus -> mainWindow.text = mainWindow.text.toString() + "-"
-            R.id.buttonMult -> mainWindow.text = mainWindow.text.toString() + "*"
-            R.id.buttonDiv -> mainWindow.text = mainWindow.text.toString() + "/"
-            R.id.buttonProc -> mainWindow.text = mainWindow.text.toString() + "%"
-            R.id.buttonRoot -> mainWindow.text = "sqrt(" + mainWindow.text.toString() + ")"
-            R.id.buttonSquare -> mainWindow.text = mainWindow.text.toString() + "^2"
+            R.id.buttonPlus -> {
+                if (!operatorLocked) {
+                    operator = '+'
+                    textOp.text = "+"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonMinus -> {
+                if (!operatorLocked) {
+                    operator = '-'
+                    textOp.text = "-"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonMult -> {
+                if (!operatorLocked) {
+                    operator = '*'
+                    textOp.text = "*"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonDiv -> {
+                if (!operatorLocked) {
+                    operator = '/'
+                    textOp.text = "/"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonProc -> {
+                if (!operatorLocked) {
+                    operator = '%'
+                    textOp.text = "%"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonRoot -> {     // square root
+                if (!operatorLocked) {
+                    operator = 'r'
+                    textOp.text = "sqrt(x)"
+                    operatorLocked = true
+                }
+            }
+            R.id.buttonSquare -> {   // square
+                if (!operatorLocked) {
+                    operator = 's'
+                    textOp.text = "^2"
+                    operatorLocked = true
+                }
+            }
             R.id.buttonCalc -> {
 
             }
+        }
+        if (!leftValInited) {
+            leftVal = mainWindow.text.toString().toDouble()
+            var leftValText: TextView = findViewById(R.id.leftVal)
+            leftValText.text = mainWindow.text.toString()
+            mainWindow.text = ""
+            leftValInited = true
+        }
+        else if (!rightValInited) {
+            rightVal = mainWindow.text.toString().toDouble()
+            var rightValText: TextView = findViewById(R.id.rightVal)
+            rightValText.text = mainWindow.text.toString()
+            mainWindow.text = ""
+            rightValInited = true
         }
     }
 }

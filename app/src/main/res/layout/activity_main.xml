@@ -21,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <TextView
@@ -62,7 +63,7 @@
         <TextView
             android:id="@+id/mainWindow"
             android:layout_width="match_parent"
-            android:layout_height="157dp"
+            android:layout_height="109dp"
             android:gravity="center"
             android:text=""
             android:textSize="@dimen/text_size" />
