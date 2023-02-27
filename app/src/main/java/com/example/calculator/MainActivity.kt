@@ -123,20 +123,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.buttonRoot -> {     // square root
                 if (!operatorLocked) {
-                    if (!leftValInited) {
-                        leftVal = mainWindow.text.toString().toDouble()
-                        var leftValText: TextView = findViewById(R.id.leftVal)
-                        leftValText.text = mainWindow.text.toString()
-                        mainWindow.text = ""
-                        leftValInited = true
-                    }
-                    else if (!rightValInited) {
-                        rightVal = mainWindow.text.toString().toDouble()
-                        var rightValText: TextView = findViewById(R.id.rightVal)
-                        rightValText.text = mainWindow.text.toString()
-                        mainWindow.text = ""
-                        rightValInited = true
-                    }
+                    initVals()
                     operator = 'r'
                     textOp.text = "sqrt(x)"
                     operatorLocked = true
@@ -146,20 +133,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.buttonSquare -> {   // square
                 if (!operatorLocked) {
-                    if (!leftValInited) {
-                        leftVal = mainWindow.text.toString().toDouble()
-                        var leftValText: TextView = findViewById(R.id.leftVal)
-                        leftValText.text = mainWindow.text.toString()
-                        mainWindow.text = ""
-                        leftValInited = true
-                    }
-                    else if (!rightValInited) {
-                        rightVal = mainWindow.text.toString().toDouble()
-                        var rightValText: TextView = findViewById(R.id.rightVal)
-                        rightValText.text = mainWindow.text.toString()
-                        mainWindow.text = ""
-                        rightValInited = true
-                    }
+                    initVals()
                     operator = 's'
                     textOp.text = "^2"
                     operatorLocked = true
@@ -168,38 +142,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             R.id.buttonCalc -> {
-                if (!leftValInited) {
-                    leftVal = mainWindow.text.toString().toDouble()
-                    var leftValText: TextView = findViewById(R.id.leftVal)
-                    leftValText.text = mainWindow.text.toString()
-                    mainWindow.text = ""
-                    leftValInited = true
-                }
-                else if (!rightValInited) {
-                    rightVal = mainWindow.text.toString().toDouble()
-                    var rightValText: TextView = findViewById(R.id.rightVal)
-                    rightValText.text = mainWindow.text.toString()
-                    mainWindow.text = ""
-                    rightValInited = true
-                }
+                initVals()
                 calculate()
                 return
             }
         }
-        if (!leftValInited) {
-            leftVal = mainWindow.text.toString().toDouble()
-            var leftValText: TextView = findViewById(R.id.leftVal)
-            leftValText.text = mainWindow.text.toString()
-            mainWindow.text = ""
-            leftValInited = true
-        }
-        else if (!rightValInited) {
-            rightVal = mainWindow.text.toString().toDouble()
-            var rightValText: TextView = findViewById(R.id.rightVal)
-            rightValText.text = mainWindow.text.toString()
-            mainWindow.text = ""
-            rightValInited = true
-        }
+        initVals()
     }
 
     // функция вычисления
@@ -243,6 +191,23 @@ class MainActivity : AppCompatActivity() {
         rightVal = 0.0
         leftVal = 0.0
         operator = ' '
+    }
 
+    fun initVals() {
+        var mainWindow: TextView = findViewById(R.id.mainWindow)
+        if (!leftValInited) {
+            leftVal = mainWindow.text.toString().toDouble()
+            var leftValText: TextView = findViewById(R.id.leftVal)
+            leftValText.text = mainWindow.text.toString()
+            mainWindow.text = ""
+            leftValInited = true
+        }
+        else if (!rightValInited && !mainWindow.text.isEmpty()) {
+            rightVal = mainWindow.text.toString().toDouble()
+            var rightValText: TextView = findViewById(R.id.rightVal)
+            rightValText.text = mainWindow.text.toString()
+            mainWindow.text = ""
+            rightValInited = true
+        }
     }
 }
