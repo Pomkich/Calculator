@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     var leftValInited: Boolean = false
     var rightValInited: Boolean = false
     var operatorLocked: Boolean = false
+    var needToClear: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +27,25 @@ class MainActivity : AppCompatActivity() {
     fun buttonEvent(view: View) {
         var mainWindow: TextView = findViewById(R.id.mainWindow)
         var select_button = view as Button
+        // очистка после расчёта
+        if (needToClear) {
+            rightValInited = false
+            leftValInited = false
+            operatorLocked = false
+            rightVal = 0.0
+            leftVal = 0.0
+            operator = ' '
+            mainWindow.text = ""
+            var text: TextView = findViewById(R.id.leftVal)
+            text.text = ""
+            text = findViewById((R.id.rightVal))
+            text.text = ""
+            text = findViewById(R.id.result)
+            text.text = ""
+            text = findViewById(R.id.operator)
+            text.text = ""
+            needToClear = false
+        }
         when (select_button.id) {
             R.id.button0 -> {
                 // ноль нельзя писать спереди
@@ -172,7 +192,8 @@ class MainActivity : AppCompatActivity() {
                 res.text = resultVal.toString()
             }
             '%' -> {
-
+                resultVal = leftVal / 100 * rightVal
+                res.text = resultVal.toString()
             }
             'r' -> {
                 resultVal = sqrt(leftVal)
@@ -183,14 +204,7 @@ class MainActivity : AppCompatActivity() {
                 res.text = resultVal.toString()
             }
         }
-
-        // сброс в исходное состояние
-        rightValInited = false
-        leftValInited = false
-        operatorLocked = false
-        rightVal = 0.0
-        leftVal = 0.0
-        operator = ' '
+        needToClear = true
     }
 
     fun initVals() {
