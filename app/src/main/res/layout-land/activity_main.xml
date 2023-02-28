@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="729dp"
+        android:layout_width="666dp"
+        android:layout_height="419dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +20,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
 
             <TextView
@@ -29,41 +29,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/landscape_text_size" />
 
             <TextView
                 android:id="@+id/operator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/landscape_text_size" />
 
             <TextView
                 android:id="@+id/rightVal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/landscape_text_size" />
 
             <TextView
                 android:id="@+id/eqOperator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="="
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/landscape_text_size" />
 
             <TextView
                 android:id="@+id/result"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text=""
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/landscape_text_size" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/mainWindow"
             android:layout_width="match_parent"
-            android:layout_height="109dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text=""
             android:textSize="@dimen/text_size" />
@@ -103,91 +103,92 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_size"
+                android:layout_height="@dimen/landscape_button_size"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button7"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="7" />
 
                 <Button
                     android:id="@+id/button8"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="8" />
 
                 <Button
                     android:id="@+id/button9"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="9" />
 
                 <Button
                     android:id="@+id/buttonSquare"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="x^2" />
 
                 <Button
                     android:id="@+id/buttonRoot"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="√x)" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_size"
+                android:layout_height="@dimen/landscape_button_size"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button4"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="4" />
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="5" />
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="6" />
 
                 <Button
                     android:id="@+id/buttonMult"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="*" />
 
                 <Button
                     android:id="@+id/buttonDiv"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="/" />
@@ -195,45 +196,45 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_size"
+                android:layout_height="@dimen/landscape_button_size"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="1" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="2" />
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="3" />
 
                 <Button
                     android:id="@+id/buttonPlus"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="+" />
 
                 <Button
                     android:id="@+id/buttonMinus"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="-" />
@@ -241,45 +242,45 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_size"
+                android:layout_height="@dimen/landscape_button_size"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/buttonChange"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="+/-" />
 
                 <Button
                     android:id="@+id/button0"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="0" />
 
                 <Button
                     android:id="@+id/buttonDot"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
                     android:text="." />
 
                 <Button
                     android:id="@+id/buttonProc"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="%" />
 
                 <Button
                     android:id="@+id/buttonCalc"
-                    android:layout_width="@dimen/button_size"
-                    android:layout_height="@dimen/button_size"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="=" />
