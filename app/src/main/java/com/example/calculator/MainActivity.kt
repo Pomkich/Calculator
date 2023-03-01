@@ -7,10 +7,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import org.w3c.dom.Text
+import java.lang.Math.pow
 import java.lang.Math.sqrt
 import java.lang.StrictMath.cos
-import kotlin.math.log10
-import kotlin.math.sin
+import kotlin.math.*
 
 class MainActivity : AppCompatActivity() {
     var leftVal: Double = 0.0
@@ -194,6 +194,63 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
             }
+            R.id.buttonTangens -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 't'
+                    textOp.text = "tg(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonCotangens -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'g'
+                    textOp.text = "ctg(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonLn -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'e'
+                    textOp.text = "ln(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonModule -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'a'
+                    textOp.text = "abs(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonFactorial -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'f'
+                    textOp.text = "x!"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonPow -> {
+                if (!operatorLocked) {
+                    operator = 'p'
+                    textOp.text = "x^n"
+                    operatorLocked = true
+                }
+            }
             R.id.buttonCalc -> {
                 initVals()
                 calculate()
@@ -246,6 +303,36 @@ class MainActivity : AppCompatActivity() {
             }
             'l' -> {    // log 10
                 resultVal = log10(leftVal)
+                res.text = resultVal.toString()
+            }
+            't' -> {    // tg
+                resultVal = tan(leftVal)
+                res.text = resultVal.toString()
+            }
+            'g' -> {    // ctg
+                resultVal = 1 / tan(leftVal)
+                res.text = resultVal.toString()
+            }
+            'e' -> {    // ln
+                resultVal = ln(leftVal)
+                res.text = resultVal.toString()
+            }
+            'a' -> {    // abs
+                resultVal = abs(leftVal)
+                res.text = resultVal.toString()
+            }
+            'f' -> {    // factorial
+                if (leftVal < 10) {
+                    resultVal = 1.0
+                    while(leftVal > 0) {
+                        resultVal *= leftVal
+                        leftVal--
+                    }
+                }
+                res.text = resultVal.toString()
+            }
+            'p' -> {    // pow
+                resultVal = pow(leftVal, rightVal)
                 res.text = resultVal.toString()
             }
         }
