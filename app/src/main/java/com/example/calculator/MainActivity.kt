@@ -251,6 +251,13 @@ class MainActivity : AppCompatActivity() {
                     operatorLocked = true
                 }
             }
+            R.id.buttonTranslate -> {
+                if (!operatorLocked) {
+                    operator = 'y'
+                    textOp.text = "x10~xn"
+                    operatorLocked = true
+                }
+            }
             R.id.buttonCalc -> {
                 initVals()
                 calculate()
@@ -322,18 +329,40 @@ class MainActivity : AppCompatActivity() {
                 res.text = resultVal.toString()
             }
             'f' -> {    // factorial
-                if (leftVal < 10) {
+                if (leftVal < 10 && leftVal > 2) {
                     resultVal = 1.0
                     while(leftVal > 0) {
                         resultVal *= leftVal
                         leftVal--
                     }
+                    res.text = resultVal.toString()
                 }
-                res.text = resultVal.toString()
+                else {
+                    res.text = "Error"
+                }
             }
             'p' -> {    // pow
                 resultVal = pow(leftVal, rightVal)
                 res.text = resultVal.toString()
+            }
+            'y' -> {    // transfer
+                if (rightVal < 9 && rightVal > 1) {
+                    var tempText: String = ""
+                    //var mul: Int = 10
+                    var ost: Int = 0
+                    while (leftVal > 0) {
+                        ost = (leftVal % rightVal).toInt()
+                        leftVal = (leftVal / rightVal).toInt().toDouble()
+                        tempText += ost.toString()
+                        //mul *= 10
+                    }
+                    tempText = tempText.reversed()
+                    resultVal = tempText.toDouble()
+                    res.text = resultVal.toString()
+                }
+                else {
+                    res.text = "error"
+                }
             }
         }
         needToClear = true

@@ -354,6 +354,7 @@
                     android:layout_width="@dimen/landscape_button_size"
                     android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
+                    android:onClick="operatorEvent"
                     android:text="x10~xn" />
 
                 <Button
