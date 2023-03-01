@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.TextView
 import org.w3c.dom.Text
 import java.lang.Math.sqrt
+import java.lang.StrictMath.cos
+import kotlin.math.log10
+import kotlin.math.sin
 
 class MainActivity : AppCompatActivity() {
     var leftVal: Double = 0.0
@@ -161,6 +164,36 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
             }
+            R.id.buttonSinus -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'i'
+                    textOp.text = "sin(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonCosinus -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'c'
+                    textOp.text = "cos(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
+            R.id.buttonLog10 -> {
+                if (!operatorLocked) {
+                    initVals()
+                    operator = 'l'
+                    textOp.text = "lg(x)"
+                    operatorLocked = true
+                    calculate()
+                    return
+                }
+            }
             R.id.buttonCalc -> {
                 initVals()
                 calculate()
@@ -201,6 +234,18 @@ class MainActivity : AppCompatActivity() {
             }
             's' -> {
                 resultVal = leftVal * leftVal
+                res.text = resultVal.toString()
+            }
+            'i' -> {    // sinus
+                resultVal = sin(leftVal)
+                res.text = resultVal.toString()
+            }
+            'c' -> {    // cosinus
+                resultVal = cos(leftVal)
+                res.text = resultVal.toString()
+            }
+            'l' -> {    // log 10
+                resultVal = log10(leftVal)
                 res.text = resultVal.toString()
             }
         }

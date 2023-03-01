@@ -144,7 +144,31 @@
                     android:layout_height="@dimen/landscape_button_size"
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
-                    android:text="√x)" />
+                    android:text="√x" />
+
+                <Button
+                    android:id="@+id/buttonSinus"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:onClick="operatorEvent"
+                    android:layout_weight="1"
+                    android:text="sin(x)" />
+
+                <Button
+                    android:id="@+id/buttonCosinus"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:onClick="operatorEvent"
+                    android:layout_weight="1"
+                    android:text="cos(x)" />
+
+                <Button
+                    android:id="@+id/buttonLog10"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:onClick="operatorEvent"
+                    android:layout_weight="1"
+                    android:text="lg(x)" />
 
             </LinearLayout>
 
@@ -192,6 +216,27 @@
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="/" />
+
+                <Button
+                    android:id="@+id/buttonTangens"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="tg(x)" />
+
+                <Button
+                    android:id="@+id/buttonCotangens"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="ctg(x)" />
+
+                <Button
+                    android:id="@+id/buttonLn"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="ln(x)" />
             </LinearLayout>
 
             <LinearLayout
@@ -238,6 +283,27 @@
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="-" />
+
+                <Button
+                    android:id="@+id/buttonModule"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="|x|" />
+
+                <Button
+                    android:id="@+id/buttonFactorial"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="x!" />
+
+                <Button
+                    android:id="@+id/buttonPow"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="x^n" />
             </LinearLayout>
 
             <LinearLayout
@@ -276,6 +342,29 @@
                     android:layout_weight="1"
                     android:onClick="operatorEvent"
                     android:text="%" />
+
+                <Button
+                    android:id="@+id/buttonTranslate"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="x10~xn" />
+
+                <Button
+                    android:id="@+id/buttonHide1"
+                    android:visibility="invisible"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="cos(x)" />
+
+                <Button
+                    android:id="@+id/buttonHide2"
+                    android:visibility="invisible"
+                    android:layout_width="@dimen/landscape_button_size"
+                    android:layout_height="@dimen/landscape_button_size"
+                    android:layout_weight="1"
+                    android:text="log10(x)" />
 
                 <Button
                     android:id="@+id/buttonCalc"
