@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         when (select_button.id) {
             R.id.button0 -> {
                 // ноль нельзя писать спереди
-                if (!mainWindow.text.isEmpty() && mainWindow.text.toString() != "0" ) {
+                if (mainWindow.text.toString() != "0" ) {
                     mainWindow.text = mainWindow.text.toString() + "0"
                 }
             }
