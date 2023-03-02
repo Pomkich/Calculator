@@ -1,16 +1,16 @@
 package com.example.calculator
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import org.w3c.dom.Text
 import java.lang.Math.pow
 import java.lang.Math.sqrt
 import java.lang.StrictMath.cos
 import kotlin.math.*
+
 
 class MainActivity : AppCompatActivity() {
     var leftVal: Double = 0.0
@@ -20,9 +20,16 @@ class MainActivity : AppCompatActivity() {
     var rightValInited: Boolean = false
     var operatorLocked: Boolean = false
     var needToClear: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var buttonSettings: Button = findViewById(R.id.buttonSettings)
+        buttonSettings.setOnClickListener {
+            val intent = Intent(this@MainActivity, SettingsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

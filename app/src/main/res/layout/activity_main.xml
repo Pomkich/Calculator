@@ -99,6 +99,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Paste" />
+
+                <Button
+                    android:id="@+id/buttonSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Settings" />
             </LinearLayout>
 
             <LinearLayout
