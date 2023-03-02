@@ -2,6 +2,7 @@ package com.example.calculator
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
     var needToClear: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val cur_int_theme = sharedPref.getInt("cur_theme", 0)
+        when (cur_int_theme) {
+            0 -> setTheme(R.style.Theme_Calculator)
+            1 -> setTheme(R.style.Theme_CalculatorDark)
+            2 -> setTheme(R.style.Theme_CalculatorKids)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
