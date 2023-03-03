@@ -111,6 +111,7 @@
                     android:layout_weight="1"
                     android:textSize="15dp"
                     android:text="@string/settings" />
+
             </LinearLayout>
 
             <LinearLayout

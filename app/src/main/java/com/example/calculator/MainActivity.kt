@@ -1,5 +1,8 @@
 package com.example.calculator
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -65,7 +68,20 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, SettingsActivity::class.java)
             startActivity(intent)
         }
+        var mainWindow: TextView = findViewById(R.id.mainWindow)
+        var buttonCopy: Button = findViewById(R.id.buttonCopy)
+        var buttonPaste: Button = findViewById(R.id.buttonPaste)
+        buttonCopy.setOnClickListener {
+            val textToCopy = mainWindow.text
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("text", textToCopy)
+            clipboardManager.setPrimaryClip(clipData)
+        }
 
+        buttonPaste.setOnClickListener {
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            mainWindow.text = clipboardManager.primaryClip?.getItemAt(0)?.text
+        }
     }
 
     // обработка кнопок ввода чисел

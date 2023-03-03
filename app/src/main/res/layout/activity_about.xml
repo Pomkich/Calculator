@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/textAbout"
+        android:layout_width="324dp"
+        android:layout_height="273dp"
+        android:layout_marginTop="46dp"
+        android:gravity="center"
+        android:text="Данная программа разработана студентами Мурманского Арктического Государственного университета\n
+Для перехода в расширенный режим необходимо перевернуть телефон.\n
+Функция факториала (X!) может быть выполнена только до чисел меньших 10.\n
+Перевод в другие системы счисления осуществяется кнопкой X10~XN.\n
+Поддерживаемые системы счисления: 2, 3, 4, 5, 6, 7, 8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

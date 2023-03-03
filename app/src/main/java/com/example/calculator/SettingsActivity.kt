@@ -35,12 +35,14 @@ class SettingsActivity : AppCompatActivity() {
 
         var buttonEnglish: Button = findViewById(R.id.buttonEnglish)
         var buttonRussian: Button = findViewById(R.id.buttonRussian)
+        var buttonAbout: Button = findViewById(R.id.buttonAbout)
 
         if (language == "en") {
             val themeText: TextView = findViewById(R.id.textTheme)
             val languageText: TextView = findViewById(R.id.textLanguage)
             themeText.setText("Theme selection")
             languageText.setText("Language selection")
+            buttonAbout.setText("About")
             buttonLight.setText("Light")
             buttonDark.setText("Dark")
             buttonKids.setText("Kids")
@@ -52,11 +54,17 @@ class SettingsActivity : AppCompatActivity() {
             val languageText: TextView = findViewById(R.id.textLanguage)
             themeText.setText("Выбор темы")
             languageText.setText("Выбор языка")
+            buttonAbout.setText("О программе")
             buttonLight.setText("Светлая")
             buttonDark.setText("Тёмная")
             buttonKids.setText("Детская")
             buttonEnglish.setText("Английский")
             buttonRussian.setText("Русский")
+        }
+
+        buttonAbout.setOnClickListener {
+            val intent = Intent(this@SettingsActivity, AboutActivity::class.java)
+            startActivity(intent)
         }
 
         buttonLight.setOnClickListener() {
