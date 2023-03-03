@@ -66,6 +66,7 @@
             android:layout_height="109dp"
             android:gravity="center"
             android:text=""
+            android:background="@drawable/logo"
             android:textSize="@dimen/text_size" />
 
         <LinearLayout
