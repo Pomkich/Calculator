@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="theme_select">Theme selection</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_kids">Kids</string>
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="clear">Clear</string>
+    <string name="settings">Settings</string>
 </resources>

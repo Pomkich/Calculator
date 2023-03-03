@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         val cur_int_theme = sharedPref.getInt("cur_theme", 0)
+        val language = sharedPref.getString("language", "en")
         when (cur_int_theme) {
             0 -> setTheme(R.style.Theme_Calculator)
             1 -> setTheme(R.style.Theme_CalculatorDark)
@@ -33,6 +34,31 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (language == "en") {
+            var button: Button = findViewById(R.id.buttonClear)
+            button.setText("Clear")
+            button = findViewById(R.id.buttonCopy)
+            button.setText("Copy")
+            button = findViewById(R.id.buttonPaste)
+            button.setText("Paste")
+            button = findViewById(R.id.buttonSettings)
+            button.setText("Settings")
+        }
+        else if (language == "ru") {
+            var button: Button = findViewById(R.id.buttonClear)
+            button.setText("Очистить")
+            button.setTextSize(10.0F)
+            button = findViewById(R.id.buttonCopy)
+            button.setText("Копировать")
+            button.setTextSize(10.0F)
+            button = findViewById(R.id.buttonPaste)
+            button.setText("Вставить")
+            button.setTextSize(10.0F)
+            button = findViewById(R.id.buttonSettings)
+            button.setText("Настройки")
+            button.setTextSize(10.0F)
+        }
 
         var buttonSettings: Button = findViewById(R.id.buttonSettings)
         buttonSettings.setOnClickListener {

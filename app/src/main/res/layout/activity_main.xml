@@ -83,29 +83,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textSize="15dp"
                     android:onClick="buttonEvent"
-                    android:text="Clear" />
+                    android:text="@string/clear" />
 
                 <Button
                     android:id="@+id/buttonCopy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Copy" />
+                    android:textSize="15dp"
+                    android:text="@string/copy" />
 
                 <Button
                     android:id="@+id/buttonPaste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Paste" />
+                    android:textSize="15dp"
+                    android:text="@string/paste" />
 
                 <Button
                     android:id="@+id/buttonSettings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Settings" />
+                    android:textSize="15dp"
+                    android:text="@string/settings" />
             </LinearLayout>
 
             <LinearLayout
