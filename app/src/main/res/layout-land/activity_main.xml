@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="93dp"
             android:layout_marginTop="40dp"
             android:orientation="vertical">
 
@@ -55,7 +55,7 @@
             <TextView
                 android:id="@+id/result"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text=""
                 android:textSize="@dimen/landscape_text_size" />
         </LinearLayout>
@@ -84,28 +84,28 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="buttonEvent"
-                    android:text="@string/clear" />
+                    android:text="Clear" />
 
                 <Button
                     android:id="@+id/buttonCopy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/copy" />
+                    android:text="Copy" />
 
                 <Button
                     android:id="@+id/buttonPaste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/paste" />
+                    android:text="Paste" />
 
                 <Button
                     android:id="@+id/buttonSettings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/settings" />
+                    android:text="Settings" />
             </LinearLayout>
 
             <LinearLayout

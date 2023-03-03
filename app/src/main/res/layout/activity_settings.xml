@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutTheme"
-        android:layout_width="287dp"
-        android:layout_height="482dp"
+        android:layout_width="283dp"
+        android:layout_height="319dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -54,7 +54,7 @@
             android:id="@+id/buttonEnglish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="English"/>
+            android:text="English" />
 
         <Button
             android:id="@+id/buttonRussian"
